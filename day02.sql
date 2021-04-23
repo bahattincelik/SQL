@@ -89,3 +89,21 @@
     -- JOIN ??lemi yapmak gerekir. Bu konuyu sonra görece?iz.
     SELECT * FROM calisanlar, adresler WHERE calisanlar.id = adresler.adres_id;
     
+    CREATE TABLE sehirler
+    (
+        alan_kodu NUMBER(3) DEFAULT 00,
+        isim VARCHAR2(28) DEFAULT 'noname',
+        nufus NUMBER(8) CHECK(nufus>0)
+    
+    
+    );
+    
+    INSERT INTO sehirler VALUES (54,'sakarya',1250000);
+    INSERT INTO sehirler VALUES ('','',18000000);
+
+    -----Parcali veri girisi
+    INSERT INTO sehirler (nufus) VALUES (500000);
+    INSERT INTO sehirler (nufus) VALUES (-200000);
+    SELECT * FROM sehirler;
+    DROP TABLE sehirler;
+    
