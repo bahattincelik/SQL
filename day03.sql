@@ -97,7 +97,7 @@
  -----------------------------------------------------------------------------*/  
    
     SELECT * FROM  personel
-    WHERE isim BETWEEN 'Mehmet Y?lmaz' AND 'Veli Han';
+    WHERE isim BETWEEN 'Mehmet Yilmaz' AND 'Veli Han';
     
 /* -----------------------------------------------------------------------------
   ORNEK6: id’si 10002 - 10004 aras?nda olmayan personelin bilgilerini listele
