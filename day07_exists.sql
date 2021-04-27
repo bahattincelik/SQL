@@ -57,7 +57,7 @@
     -- Bir sorgu içerisinde  tabloya da k?sa isim vermek mümkün. 
     -- tablo_Adi k?sa_isim
     
-    SELECT musteri_isim FROM mart_satislar 
+    SELECT urun_id, musteri_isim FROM mart_satislar 
     
     WHERE EXISTS  (SELECT urun_id FROM nisan_satislar 
                   WHERE mart_satislar.urun_id = nisan_satislar.urun_id);
