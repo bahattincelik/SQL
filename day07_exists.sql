@@ -72,8 +72,22 @@
   N?SAN ay?nda sat?n alan MUSTERI_ISIM'lerini listeleyen bir sorgu yaz?n?z. 
  -----------------------------------------------------------------------------*/
  
+    SELECT urun_isim, musteri_isim FROM nisan_satislar n
+    
+    WHERE EXISTS (SELECT urun_isim FROM mart_satislar m
+                WHERE n.urun_isim=m.urun_isim);
  
  /* ----------------------------------------------------------------------------
   ORNEK3: Her iki ayda da ortak olarak sat?lmayan ürünlerin URUN_ISIM'lerini 
   ve bu ürünleri N?SAN ay?nda sat?n alan MUSTERI_ISIM'lerini listeleyiniz. 
  -----------------------------------------------------------------------------*/
+    SELECT urun_isim, musteri_isim FROM nisan_satislar n
+    
+    WHERE NOT EXISTS (SELECT urun_isim FROM mart_satislar m
+                WHERE n.urun_isim=m.urun_isim);
+ 
+ 
+ 
+ 
+ 
+ 
