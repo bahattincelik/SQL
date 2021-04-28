@@ -7,7 +7,7 @@
     de?er döndürür. Aksi takdirde, FALSE de?er döndürecektir.
     
     Özellikle altsorgularda h?zl? kontrol i?lemi gerçekle?tirmek için kullan?l?r
-==============================================================================*/CREATE TABLE mart_satislar 
+==============================================================================*/
     
     CREATE TABLE mart_satislar
     (
