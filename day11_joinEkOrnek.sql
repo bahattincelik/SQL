@@ -74,7 +74,11 @@
   maaslarini bolum ve maas siraali listeleyiniz. 
   NOT: calisani olmasa bile bolum ismi gosterilmelidir.
 ------------------------------------------------------------------------------*/
-	
+	SELECT P.personel_isim,B.bolum_isim,P.maas
+    FROM bolumler B
+    FULL JOIN personel P
+    ON P.bolum_id=B.bolum_id
+    ORDER BY P.maas;
 	
 	
 /* -----------------------------------------------------------------------------
@@ -83,10 +87,24 @@
   siralayarak listeleyiniz.
 ------------------------------------------------------------------------------*/ 
 	
-	
-	
-	
+	SELECT P.personel_isim, B.bolum_isim, P.maas
+    FROM bolumler B
+    LEFT JOIN personel P
+    ON P.bolum_id=B.bolum_id
+    WHERE B.bolum_id IN (20,30) AND P.maas>2000
+    ORDER BY B.bolum_isim, P.personel_isim;
+    
 /* -----------------------------------------------------------------------------
   ORNEK5: MUDUR’u Mesut veya Emine olan personelin bolumlerini,isimlerini,  
   maaslarini ve mudur isimlerini maas siral? olarak (Çoktan aza) listeleyiniz.
 ------------------------------------------------------------------------------*/
+    SELECT P.personel_isim, B.bolum_isim, P.maas,(SELECT P.personel_isim  FROM personel 
+                                                WHERE (SELECT mudur_id FROM personel)=P.personel_id ) AS mudur_ismi  
+    FROM personel P
+    RIGHT JOIN bolumler B
+    ON P.bolum_id=B.bolum_id
+    WHERE P.mudur_id IN(7698,7788)
+    ORDER BY P.maas DESC;
+
+
+
